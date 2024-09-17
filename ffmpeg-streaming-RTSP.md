@@ -38,7 +38,7 @@ Now that the MediaMTX server is running, you can use FFmpeg in other terminal to
 #### **Command to Stream a File Over RTSP**:
 
 ```bash
-ffmpeg -re -i input.mp4 -c:v libx264 -c:a aac -f rtsp rtsp://192.168.1.100:8554/stream
+ffmpeg -re -i input.mp4 -c:v libx264 -c:a aac -f rtsp rtsp://192.168.250.148:8554/stream
 ```
 
 - **`-re`**: Reads the input in real-time.
@@ -55,7 +55,7 @@ The MediaMTX Server will now stream the media to the specified endpoint (`/strea
 If you want to stream live content, such as a webcam, you can use this command:
 
 ```bash
-ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -f rtsp rtsp://192.168.1.100:8554/live
+ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -f rtsp rtsp://192.168.250.148:8554/live
 ```
 
 - **`-f v4l2`**: Specifies Video4Linux as the input device (Linux webcam).
