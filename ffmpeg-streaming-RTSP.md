@@ -1,4 +1,4 @@
-### Streaming Over RTSP with FFmpeg and MediaMTX
+## Streaming Over RTSP with FFmpeg and MediaMTX
 
 RTSP (Real-Time Streaming Protocol) is commonly used for streaming media across IP networks, particularly in real-time applications like live camera feeds, video conferencing, or multimedia streaming within a local network. FFmpeg can be used to send or receive streams over RTSP.
 
@@ -14,9 +14,7 @@ Before streaming, you need an RTSP server to handle the stream. There are severa
 - **ffserver** (deprecated but still usable with older FFmpeg versions)
 - **MediaMTX (formerly rtsp-simple-server)** MediaMTX is a ready-to-use and zero-dependency real-time media server and media proxy that allows to publish, read, proxy, record and playback video and audio streams. It has been conceived as a "media router" that routes media streams from one end to the other.
 
-#### **Install MediaMTX Server**
-
-### 1. **Installation**
+### **Install MediaMTX Server**
 
 #### **Linux Installation** (via precompiled binaries)
 1. Download the latest release from the [MediaMTX GitHub page](https://github.com/aler9/mediamtx/releases).
