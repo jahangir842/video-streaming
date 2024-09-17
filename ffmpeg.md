@@ -147,6 +147,7 @@ To extract frames from a video and save them as image files:
 ffmpeg -i input.mp4 -vf fps=1 frame_%04d.png
 ```
 
+- `vf` : Video Filter
 - `fps=1`: Extracts one frame per second.
 - `%04d`: Sequential numbering of the output images.
 
@@ -156,7 +157,8 @@ If you have an external subtitle file (e.g., `.srt`), you can embed it into the 
 ```bash
 ffmpeg -i input.mp4 -vf subtitles=subtitle.srt output.mp4
 ```
-
+- `vf` : Video Filter
+  
 #### **Create GIF from Video**
 Convert a video to a GIF:
 
@@ -215,7 +217,8 @@ FFmpeg has a wide variety of filters that can be applied to both audio and video
   ```bash
   ffmpeg -i input.mp4 -vf "transpose=1" output.mp4
   ```
-
+- `vf` : Video Filter
+  
 - **Grayscale Filter:**
   ```bash
   ffmpeg -i input.mp4 -vf "hue=s=0" output.mp4
