@@ -23,7 +23,7 @@ To install the **MediaMTX Server**, follow these steps:
 2. Unzip the downloaded file and start the RTSP Simple Server:
 
    ```bash
-   cd media
+   cd mediamtx
    ./mediamtx
    ```
 
