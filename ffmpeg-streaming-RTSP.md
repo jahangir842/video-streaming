@@ -22,6 +22,7 @@ Before streaming, you need an RTSP server to handle the stream. There are severa
    ```bash
    wget https://github.com/aler9/mediamtx/releases/download/v0.0.0/mediamtx_v0.0.0_linux_amd64.tar.gz
    tar -xzvf mediamtx_v0.0.0_linux_amd64.tar.gz
+   mv mediamtx_v0.0.0_linux_amd64 mediamtx
    cd mediamtx
    ./mediamtx
    ```
@@ -37,9 +38,9 @@ Before streaming, you need an RTSP server to handle the stream. There are severa
 
 ### 2. **Streaming Over RTSP Using FFmpeg**
 
-Now that the MediaMTX server is running, you can use FFmpeg in other terminal to stream media to it. The MediaMTX Server will receive the media and make it available to clients on the network.
+Now that the MediaMTX server is running, you can use FFmpeg in another terminal to stream media to this server. The MediaMTX Server will receive the media and make it available to clients on the network in a specified path.
 
-#### **Command to Stream a File Over RTSP**:
+#### **Streaming a File Over RTSP**:
 
 ```bash
 ffmpeg -re -i input.mp4 -c:v libx264 -c:a aac -f rtsp rtsp://192.168.250.148:8554/stream
