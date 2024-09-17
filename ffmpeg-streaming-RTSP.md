@@ -23,6 +23,7 @@ To install the **MediaMTX Server**, follow these steps:
 2. Unzip the downloaded file and start the RTSP Simple Server:
 
    ```bash
+   cd media
    ./mediamtx
    ```
 
@@ -45,7 +46,7 @@ ffmpeg -re -i input.mp4 -c:v libx264 -c:a aac -f rtsp rtsp://192.168.1.100:8554/
 - **`-c:v libx264`**: Encodes the video using the H.264 codec.
 - **`-c:a aac`**: Encodes the audio using AAC codec.
 - **`-f rtsp`**: Specifies RTSP as the output format.
-- **`rtsp://192.168.1.100:8554/stream`**: The RTSP server’s address and stream path. Replace `192.168.1.100` with the server's IP address and ensure port `8554` is open.
+- **`rtsp://192.168.250.148:8554/stream`**: The RTSP server’s address and stream path. Replace `192.168.250.126` with the server's IP address and ensure port `8554` is open.
 
 The MediaMTX Server will now stream the media to the specified endpoint (`/stream`).
 
@@ -61,7 +62,7 @@ ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -f rtsp rtsp://192.168.1.100:8554/liv
 - **`/dev/video0`**: The device file for your webcam.
 - **`-c:v libx264`**: Encodes the video using H.264.
 - **`-f rtsp`**: Streams over RTSP.
-- **`rtsp://192.168.1.100:8554/live`**: Specifies the RTSP stream URL.
+- **`rtsp://192.168.250.148:8554/live`**: Specifies the RTSP stream URL.
 
 ---
 
@@ -76,10 +77,10 @@ Once the stream is being sent from FFmpeg to the RTSP server, any client on the 
 3. Enter the RTSP URL of the stream:
 
    ```bash
-   rtsp://192.168.1.100:8554/stream
+   rtsp://192.168.250.148:8554/stream
    ```
 
-   Replace `192.168.1.100` with the MediaMTX server’s IP address, and `/stream` is the stream path used earlier.
+   Replace `192.168.250.148` with the MediaMTX server’s IP address, and `/stream` is the stream path used earlier.
 
 VLC will now display the live or pre-recorded stream being broadcast over the local network.
 
