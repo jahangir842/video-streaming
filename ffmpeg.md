@@ -133,8 +133,11 @@ ffmpeg -i input.mkv -vcodec libx264 -acodec aac output.mp4
 ```
 
 **Input File:** input.mkv (a Matroska file with potentially multiple audio and video streams)
+
 **Output File:** output.mp4 (an MP4 file with specified codecs)
+
 **Video Codec:** libx264 (H.264 video codec for efficient video compression)
+
 **Audio Codec:** aac (Advanced Audio Codec for high-quality audio)
 
 #### **Extract Images from Video**
