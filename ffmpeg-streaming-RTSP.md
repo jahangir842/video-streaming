@@ -82,11 +82,7 @@ ffplay rtsp://192.168.250.148:8554/live
 
 This will allow you to play the RTSP stream on your client machine.
 
-### 3. **Receiving the RTSP Stream**
-
-Once the stream is being sent from FFmpeg to the RTSP server, any client on the local network can connect and receive the stream.
-
-#### **Viewing the RTSP Stream in VLC**:
+### 4. **Receiving the RTSP Stream in VLC**
 
 1. Open VLC on the client machine (which is connected to the local network).
 2. Go to **Media → Open Network Stream**.
