@@ -6,7 +6,7 @@ Here are detailed steps to stream multimedia content over your local network usi
 
 ---
 
-### 1. **Stream Over UDP**
+### **Stream Over UDP**
 
 UDP (User Datagram Protocol) is a common protocol for video streaming within a local network. It's low-latency and can handle large amounts of data but does not provide error correction, making it suitable for fast, local streams where packet loss is minimal.
 
@@ -34,7 +34,7 @@ You can view this stream using a media player like VLC. On the receiving device 
 
 ---
 
-### 5. **Live Streaming from a Webcam or Desktop**
+### **Live Streaming from a Webcam or Desktop**
 
 #### **Streaming Webcam Over UDP**:
 
@@ -52,7 +52,7 @@ You can view the stream on a client device using VLC with the URL `udp://@:1234`
 
 ---
 
-### 6. **Advanced Network Stream Tuning**
+### **Advanced Network Stream Tuning**
 
 #### **Buffering and Latency Management**:
 
@@ -72,7 +72,7 @@ This command is optimized for low-latency streaming while controlling the bitrat
 
 ---
 
-### 7. **Stream Replication (Multiple Destinations)**
+### **Stream Replication (Multiple Destinations)**
 
 FFmpeg allows you to stream the same content to multiple clients or servers simultaneously.
 
