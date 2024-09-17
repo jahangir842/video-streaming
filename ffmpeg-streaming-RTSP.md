@@ -16,18 +16,24 @@ Before streaming, you need an RTSP server to handle the stream. There are severa
 
 #### **Install MediaMTX Server**
 
-To install the **MediaMTX Server**, follow these steps:
+### 1. **Installation**
 
-1. Download the latest version of RTSP Simple Server from the [official GitHub repository](https://github.com/aler9/rtsp-simple-server).
-
-2. Unzip the downloaded file and start the RTSP Simple Server:
-
+#### **Linux Installation** (via precompiled binaries)
+1. Download the latest release from the [MediaMTX GitHub page](https://github.com/aler9/mediamtx/releases).
+2. Extract the tar.gz file and run the binary:
    ```bash
+   wget https://github.com/aler9/mediamtx/releases/download/v0.0.0/mediamtx_v0.0.0_linux_amd64.tar.gz
+   tar -xzvf mediamtx_v0.0.0_linux_amd64.tar.gz
    cd mediamtx
    ./mediamtx
    ```
-
    This starts the MediaMTX server, which listens for incoming connections by default on `port 8554`.
+
+   **For more info:** Check the detailed guide in this repository.
+
+#### **Windows Installation**
+1. Download the Windows executable from the [GitHub releases page](https://github.com/aler9/mediamtx/releases).
+2. Run the executable.
 
 ---
 
