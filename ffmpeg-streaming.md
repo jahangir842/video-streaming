@@ -23,6 +23,12 @@ ffmpeg -re -i input.mp4 -c:v libx264 -c:a aac -f mpegts udp://192.168.1.100:1234
 - **`-f mpegts`**: Outputs in MPEG-TS (MPEG Transmission) format, commonly used in streaming.
 - **`udp://192.168.1.100:1234`**: Sends the stream to the IP `192.168.1.100` on port `1234`. Change the IP address to match the receiving device.
 
+View this stream with `ffmpeg`
+
+```
+ffplay udp://192.168.1.100:1234
+```
+
 You can view this stream using a media player like VLC. On the receiving device (e.g., 192.168.1.100), open VLC and go to:
 **Media → Open Network Stream** and enter `udp://@:1234`.
 
