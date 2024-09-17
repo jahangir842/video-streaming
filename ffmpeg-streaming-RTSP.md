@@ -81,8 +81,6 @@ ffplay rtsp://192.168.250.148:8554/live
 ``` 
 
 This will allow you to play the RTSP stream on your client machine.
-```
-
 
 ### 3. **Receiving the RTSP Stream**
 
