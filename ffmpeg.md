@@ -125,12 +125,17 @@ ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output_compressed.mp4
 
 ### 5. **Advanced Commands**
 
-#### **Convert and Change Codec**
+#### **Convert and Change Codec of Video and Audio**
 Change both the format and codec (e.g., convert a video to H.264 codec).
 
 ```bash
 ffmpeg -i input.mkv -vcodec libx264 -acodec aac output.mp4
 ```
+
+**Input File:** input.mkv (a Matroska file with potentially multiple audio and video streams)
+**Output File:** output.mp4 (an MP4 file with specified codecs)
+**Video Codec:** libx264 (H.264 video codec for efficient video compression)
+**Audio Codec:** aac (Advanced Audio Codec for high-quality audio)
 
 #### **Extract Images from Video**
 To extract frames from a video and save them as image files:
