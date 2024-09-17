@@ -1,4 +1,4 @@
-### Streaming Over RTSP with FFmpeg on a Local Network
+### Streaming Over RTSP with FFmpeg and MediaMTX
 
 RTSP (Real-Time Streaming Protocol) is commonly used for streaming media across IP networks, particularly in real-time applications like live camera feeds, video conferencing, or multimedia streaming within a local network. FFmpeg can be used to send or receive streams over RTSP.
 
@@ -8,7 +8,7 @@ Below is a step-by-step guide on how to stream media over RTSP using FFmpeg.
 
 ---
 
-### 1. **Setting Up an RTSP Server**
+### 1. **Setting Up an MediaMTX Server**
 
 Before streaming, you need an RTSP server to handle the stream. There are several open-source RTSP servers available. Two popular options are:
 - **ffserver** (deprecated but still usable with older FFmpeg versions)
@@ -33,7 +33,7 @@ To install the **MediaMTX Server**, follow these steps:
 
 ### 2. **Streaming Over RTSP Using FFmpeg**
 
-Now that the MediaMTX server is running, you can use FFmpeg to stream media to it. The MediaMTX Server will receive the media and make it available to clients on the network.
+Now that the MediaMTX server is running, you can use FFmpeg in other terminal to stream media to it. The MediaMTX Server will receive the media and make it available to clients on the network.
 
 #### **Command to Stream a File Over RTSP**:
 
@@ -65,6 +65,17 @@ ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -f rtsp rtsp://192.168.1.100:8554/liv
 - **`rtsp://192.168.250.148:8554/live`**: Specifies the RTSP stream URL.
 
 ---
+
+### 3. **Receiving the RTSP Stream with FFPlay**
+
+We can play the stream of RTSP with following command in terminal of client end:
+
+```
+ffplay rtsp://192.168.250.148:8554/stream
+or
+ffplay rtsp://192.168.250.148:8554/live
+```
+
 
 ### 3. **Receiving the RTSP Stream**
 
