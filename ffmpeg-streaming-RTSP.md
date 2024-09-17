@@ -27,7 +27,7 @@ To install the **MediaMTX Server**, follow these steps:
    ./mediamtx
    ```
 
-   This starts the MediaMTX server, which listens for incoming connections by default on port 8554.
+   This starts the MediaMTX server, which listens for incoming connections by default on `port 8554`.
 
 ---
 
