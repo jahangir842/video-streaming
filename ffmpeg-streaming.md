@@ -45,6 +45,36 @@ You can view the stream on a media player that supports RTP, such as VLC. In VLC
 - Go to **Media → Open Network Stream**.
 - Enter `rtp://@:1234` to start receiving the stream.
 
+### Stream Playback with `ffmpeg`
+
+**Convert Pixel Format (If Needed):**
+
+Sometimes, the pixel format of the stream may not be supported by default. To convert the pixel format on the fly to a more compatible format like `yuv420p`, use the following command:
+
+```bash
+ffmpeg -i udp://192.168.1.100:1234 -vf "format=yuv420p" -f sdl2 -
+```
+
+**Direct Playback with `ffplay`:**
+
+You can also play the stream directly using `ffplay` without conversion. This is useful if the pixel format is supported:
+
+```bash
+ffplay -i udp://192.168.1.100:1234
+```
+
+- **`-i udp://192.168.1.100:1234`**: Specifies the input stream URL.
+- **`-vf "format=yuv420p"`**: Applies a video filter to convert the pixel format to `yuv420p`.
+- **`-f sdl2`**: Specifies the output format as SDL2 for playback.
+- **`ffplay`**: A command-line media player that comes with FFmpeg, used for simple playback of streams and files.
+
+**3. Troubleshooting:**
+
+If you encounter errors like unsupported pixel formats or missing frames, try the following:
+
+- **Ensure the Stream is Correctly Transmitted**: Verify that the stream is being sent without issues.
+- **Test with Alternative Players**: Use media players like VLC to check if the issue is specific to `ffplay`.
+
 RTP is better suited for low-latency and high-quality streaming compared to UDP.
 
 ---
