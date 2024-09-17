@@ -12,27 +12,27 @@ Below is a step-by-step guide on how to stream media over RTSP using FFmpeg.
 
 Before streaming, you need an RTSP server to handle the stream. There are several open-source RTSP servers available. Two popular options are:
 - **ffserver** (deprecated but still usable with older FFmpeg versions)
-- **RTSP Simple Server** (a modern, minimal, open-source RTSP server)
+- **MediaMTX (formerly rtsp-simple-server)** MediaMTX is a ready-to-use and zero-dependency real-time media server and media proxy that allows to publish, read, proxy, record and playback video and audio streams. It has been conceived as a "media router" that routes media streams from one end to the other.
 
-#### **Install RTSP Simple Server**
+#### **Install MediaMTX Server**
 
-To install the **RTSP Simple Server**, follow these steps:
+To install the **MediaMTX Server**, follow these steps:
 
 1. Download the latest version of RTSP Simple Server from the [official GitHub repository](https://github.com/aler9/rtsp-simple-server).
 
 2. Unzip the downloaded file and start the RTSP Simple Server:
 
    ```bash
-   ./rtsp-simple-server
+   ./mediamtx
    ```
 
-   This starts the RTSP server, which listens for incoming connections by default on port 8554.
+   This starts the MediaMTX server, which listens for incoming connections by default on port 8554.
 
 ---
 
 ### 2. **Streaming Over RTSP Using FFmpeg**
 
-Now that the RTSP server is running, you can use FFmpeg to stream media to it. The RTSP Simple Server will receive the media and make it available to clients on the network.
+Now that the MediaMTX server is running, you can use FFmpeg to stream media to it. The MediaMTX Server will receive the media and make it available to clients on the network.
 
 #### **Command to Stream a File Over RTSP**:
 
@@ -47,7 +47,7 @@ ffmpeg -re -i input.mp4 -c:v libx264 -c:a aac -f rtsp rtsp://192.168.1.100:8554/
 - **`-f rtsp`**: Specifies RTSP as the output format.
 - **`rtsp://192.168.1.100:8554/stream`**: The RTSP server’s address and stream path. Replace `192.168.1.100` with the server's IP address and ensure port `8554` is open.
 
-The RTSP Simple Server will now stream the media to the specified endpoint (`/stream`).
+The MediaMTX Server will now stream the media to the specified endpoint (`/stream`).
 
 #### **Streaming Live Content (e.g., Webcam)**:
 
@@ -79,7 +79,7 @@ Once the stream is being sent from FFmpeg to the RTSP server, any client on the 
    rtsp://192.168.1.100:8554/stream
    ```
 
-   Replace `192.168.1.100` with the RTSP server’s IP address, and `/stream` is the stream path used earlier.
+   Replace `192.168.1.100` with the MediaMTX server’s IP address, and `/stream` is the stream path used earlier.
 
 VLC will now display the live or pre-recorded stream being broadcast over the local network.
 
@@ -113,7 +113,7 @@ By default, FFmpeg will use RTP as the transport protocol for the media when you
 
 ### 6. **Broadcasting to Multiple Clients**
 
-RTSP servers, like RTSP Simple Server, allow multiple clients to connect and receive the same stream simultaneously. This makes RTSP ideal for scenarios like local IP camera setups or IPTV.
+MediaMTX servers allow multiple clients to connect and receive the same stream simultaneously. This makes RTSP ideal for scenarios like local IP camera setups or IPTV.
 
 Once the stream is running on the server, any device on the network can open the RTSP stream in VLC or any RTSP-compatible player, as long as they have the correct URL and the RTSP server has enough resources to handle multiple connections.
 
@@ -121,7 +121,7 @@ Once the stream is running on the server, any device on the network can open the
 
 ### 7. **Setting Up Authentication for RTSP Streams**
 
-To secure your stream, you may want to set up authentication on your RTSP server. RTSP Simple Server allows basic authentication, which can be configured in its configuration file (`rtsp-simple-server.yml`).
+To secure your stream, you may want to set up authentication on your MediaMTX RTSP server. RTSP Simple Server allows basic authentication, which can be configured in its configuration file (`mediamtx.yml`).
 
 1. Open the configuration file:
 
