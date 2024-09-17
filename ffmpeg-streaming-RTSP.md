@@ -66,14 +66,21 @@ ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -f rtsp rtsp://192.168.1.100:8554/liv
 
 ---
 
-### 3. **Receiving the RTSP Stream with FFPlay**
+### 3. Playing the RTSP Stream with FFPlay
 
-We can play the stream of RTSP with following command in terminal of client end:
+To view the RTSP stream on the client side, you can use the following commands in the terminal:
 
-```
+```bash
 ffplay rtsp://192.168.250.148:8554/stream
+```
+
 or
+
+```bash
 ffplay rtsp://192.168.250.148:8554/live
+``` 
+
+This will allow you to play the RTSP stream on your client machine.
 ```
 
 
