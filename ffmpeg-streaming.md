@@ -45,35 +45,28 @@ You can view the stream on a media player that supports RTP, such as VLC. In VLC
 - Go to **Media → Open Network Stream**.
 - Enter `rtp://@:1234` to start receiving the stream.
 
-### Stream Playback with `ffmpeg`
-
-**Convert Pixel Format (If Needed):**
-
-Sometimes, the pixel format of the stream may not be supported by default. To convert the pixel format on the fly to a more compatible format like `yuv420p`, use the following command:
+### Command to View RTP Stream with `ffmpeg`
 
 ```bash
-ffmpeg -i udp://192.168.1.100:1234 -vf "format=yuv420p" -f sdl2 -
+ffmpeg -i rtp://192.168.1.100:1234 -c:v copy -c:a copy -f nut -
 ```
 
-**Direct Playback with `ffplay`:**
+**Explanation:**
 
-You can also play the stream directly using `ffplay` without conversion. This is useful if the pixel format is supported:
+- `-i rtp://192.168.1.100:1234`: Specifies the input stream from the RTP source at IP `192.168.1.100` and port `1234`.
+- `-c:v copy`: Copies the video codec without re-encoding.
+- `-c:a copy`: Copies the audio codec without re-encoding.
+- `-f nut -`: Outputs the stream in the NUT format (a container format), which is suitable for streaming over the command line. The `-` specifies the output to be shown on the terminal.
+
+This command will display the incoming RTP stream data in your terminal. If you want to save it to a file, you can replace the `-` with a filename, like `output.mp4`.
+
+**Example to Save the Stream to a File:**
 
 ```bash
-ffplay -i udp://192.168.1.100:1234
+ffmpeg -i rtp://192.168.1.100:1234 -c:v copy -c:a copy output.mp4
 ```
 
-- **`-i udp://192.168.1.100:1234`**: Specifies the input stream URL.
-- **`-vf "format=yuv420p"`**: Applies a video filter to convert the pixel format to `yuv420p`.
-- **`-f sdl2`**: Specifies the output format as SDL2 for playback.
-- **`ffplay`**: A command-line media player that comes with FFmpeg, used for simple playback of streams and files.
-
-**3. Troubleshooting:**
-
-If you encounter errors like unsupported pixel formats or missing frames, try the following:
-
-- **Ensure the Stream is Correctly Transmitted**: Verify that the stream is being sent without issues.
-- **Test with Alternative Players**: Use media players like VLC to check if the issue is specific to `ffplay`.
+This will save the RTP stream to `output.mp4` for further use.
 
 RTP is better suited for low-latency and high-quality streaming compared to UDP.
 
