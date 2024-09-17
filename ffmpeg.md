@@ -1,3 +1,5 @@
+## FFmpeg (Fast Forward Moving Picture Experts Group)
+
 FFmpeg is a powerful multimedia framework that allows you to encode, decode, transcode, stream, and play audio and video files. It supports a wide variety of formats, making it an essential tool for video/audio processing and manipulation. Below are detailed notes on FFmpeg, covering installation, commands, usage, and various operations.
 
 ---
