@@ -92,8 +92,7 @@ This will allow you to play the RTSP stream on your client machine.
 In the command line:
 
 ```
-vlc
-rtsp://192.168.250.148:8554/stream
+vlc rtsp://192.168.250.148:8554/stream
 ```
 
 1. Open VLC on the client machine (which is connected to the local network).
